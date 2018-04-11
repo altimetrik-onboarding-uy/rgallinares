@@ -1,0 +1,31 @@
+<aura:component >
+    <aura:attribute name="workItem" type="Work_Item__c"/>
+    <fieldset class="slsds-box slds-theme_shade slds-theme_alert-texture slds-container--small">
+        <legend id="workitem" class="slsds-text-heading--small slds-align_absolute-center">
+            {!v.workItem.Name}
+        </legend>
+        <p class="slds-text-heading--medium slds-p-horizontal--small">
+            <a onclick="{!c.handleClick}">Title: {!v.workItem.Title__c}</a>
+        </p>
+        <p class="slds-text-heading--medium slds-p-horizontal--small">
+            Difficulty: {!v.workItem.Difficulty__c}
+        </p>
+		<p class="slds-text-heading--medium slds-p-horizontal--small">
+            Type: <aura:if isTrue="{!v.workItem.Type__c=='Action'}">
+            			<lightning:layoutItem >
+                            <lightning:icon iconName="standard:task" alternativeText="Action"/>
+            			</lightning:layoutItem>
+            	  </aura:if>
+            	  <aura:if isTrue="{!v.workItem.Type__c=='Fix'}">
+                      	<lightning:layoutItem >
+                            <lightning:icon iconName="standard:resource_absence" alternativeText="Fix"/>
+                        </lightning:layoutItem>
+            	  </aura:if>
+            	  <aura:if isTrue="{!v.workItem.Type__c=='Idea'}">
+                      	<lightning:layoutItem >
+                            <lightning:icon iconName="standard:skill" alternativeText="Idea"/>
+                        </lightning:layoutItem>
+            	  </aura:if>
+        </p>
+    </fieldset>
+</aura:component>

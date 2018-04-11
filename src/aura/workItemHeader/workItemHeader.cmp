@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable">
+	<lightning:layout class="slds-page-header slds-page-header--object-home slds-align_absolute-center">
+        <lightning:layoutItem >
+            <lightning:icon iconName="custom:custom3" alternativeText="Work Items"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header slds-border_bottom">
+                <h1 class="slds-text-heading--large">Work Items</h1>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <c:workItemGrid />
+</aura:component>

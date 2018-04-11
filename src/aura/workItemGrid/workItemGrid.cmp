@@ -1,0 +1,59 @@
+<aura:component controller="workItemController">
+    <aura:attribute name="workItems" type="Work_Item__c[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="newItems" type="Work_Item__c[]"/>
+    <aura:attribute name="readyItems" type="Work_Item__c[]"/>
+    <aura:attribute name="inProgressItems" type="Work_Item__c[]"/>
+    <aura:attribute name="doneItems" type="Work_Item__c[]"/>
+    
+    <div class="slds-grid slds-grid_align-center">
+  		<div class="slds-col ">
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-align_absolute-center">
+                    <span>New</span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <c:workItemList workItems="{!v.newItems}"/>
+                    </span>
+                </div>
+            </div>
+  		</div>
+        <div class="slds-col ">
+    		<div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-align_absolute-center">
+                    <span>Ready</span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <c:workItemList workItems="{!v.readyItems}"/>
+                    </span>
+                </div>
+            </div>
+  		</div>
+        <div class="slds-col ">
+    		<div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-align_absolute-center">
+                    <span>In Progress</span>
+                </div>
+                <div class="slds-col ">
+                    <span>
+                        <c:workItemList workItems="{!v.inProgressItems}"/>
+                    </span>
+                </div>
+            </div>
+  		</div>
+        <div class="slds-col ">
+    		<div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-align_absolute-center">
+                    <span>Done</span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <c:workItemList workItems="{!v.doneItems}"/>
+                    </span>
+                </div>
+            </div>
+  		</div>
+    </div>           
+</aura:component>

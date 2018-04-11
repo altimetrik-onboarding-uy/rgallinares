@@ -7,4 +7,5 @@
     <tab>standard-Contact</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
+    <tab>Work_Items_In_The_Past_30_Days</tab>
 </CustomApplication>
