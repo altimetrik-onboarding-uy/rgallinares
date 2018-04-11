@@ -163,7 +163,7 @@
             <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
@@ -216,7 +216,7 @@
         <columns>Assignee__c</columns>
         <columns>Estimated_End_Date__c</columns>
         <columns>End_Date__c</columns>
-        <filterScope>Everything</filterScope>
+        <filterScope>Mine</filterScope>
         <label>Work Items</label>
     </listViews>
     <nameField>

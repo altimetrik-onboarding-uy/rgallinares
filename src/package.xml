@@ -9,6 +9,13 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>workItem</members>
+        <members>workItemGrid</members>
+        <members>workItemHeader</members>
+        <members>workItemList</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
         <members>Work_Manager</members>
         <name>CustomApplication</name>
     </types>
@@ -16,6 +23,10 @@
         <members>Contact</members>
         <members>Work_Item__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Work_Items_In_The_Last_30_Days</members>
+        <name>FlexiPage</name>
     </types>
     <types>
         <members>unfiled$public</members>
