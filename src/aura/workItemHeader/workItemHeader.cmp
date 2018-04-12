@@ -9,5 +9,5 @@
             </div>
         </lightning:layoutItem>
     </lightning:layout>
-    <c:workItemGrid />
+    <c:workItemGrid contactId="{!v.recordId}"/>
 </aura:component>
