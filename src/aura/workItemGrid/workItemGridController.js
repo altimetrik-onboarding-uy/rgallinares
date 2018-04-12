@@ -11,7 +11,7 @@
             action = component.get("c.getWorkItems");
         }
 		action.setCallback(this,function(response){
-            helper.callback(component,response);
+            helper.loadLists(component,response);
         });
         $A.enqueueAction(action);        
 	},

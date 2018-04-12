@@ -1,5 +1,5 @@
 ({
-	callback : function(component, response) {
+	loadLists : function(component, response) {
 		var state = response.getState();
             if(state==="SUCCESS"){
                 var myItem = [];
