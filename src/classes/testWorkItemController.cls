@@ -14,7 +14,7 @@ public class testWorkItemController {
         Test.startTest();
         	List<Work_Item__c> testItems = workItemController.getWorkItems();
         Test.stopTest();
-     	System.assertEquals([SELECT Name, Title__c,Difficulty__c,Type__c,Status__c FROM Work_Item__c WHERE Start_Date__c = LAST_N_DAYS:30],testItems);
+     	System.assertEquals(5,testItems.size());
     }
     @isTest static void TestWorkItemsForAssignee(){
         Contact cc = new Contact(FirstName='Diff Contact',LastName='Test');
@@ -30,7 +30,6 @@ public class testWorkItemController {
         Test.startTest();
         List<Work_Item__c> testItems = workItemController.getWorkItemsAssigned(cc.Id);
         Test.stopTest();
-        System.assertEquals([SELECT Name, Title__c, Difficulty__c, Type__c, Status__c FROM Work_Item__c 
-                             WHERE Assignee__c =: cc.Id AND Start_Date__c = LAST_N_DAYS:30],testItems);
+        System.assertEquals(5,testItems.size());
     }
 }

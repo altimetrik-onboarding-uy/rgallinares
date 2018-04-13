@@ -14,11 +14,12 @@ public class testEmailBatch {
                                          Difficulty__c='3',Status__c='Ready',Assignee__c=myContacts.get(i).Id
             	));
         }
-        
         insert myItems;
         Test.startTest();
         emailBatch b = new emailBatch();
-        Database.executeBatch(b);
+        Database.executeBatch(b);   
         Test.stopTest();
+        AsyncApexJob jobInfo = [SELECT Status FROM AsyncApexJob LIMIT 1];
+        System.assertEquals('Completed',jobInfo.Status);
     }
 }

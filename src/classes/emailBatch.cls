@@ -1,6 +1,7 @@
 global class emailBatch implements Database.Batchable<sObject>, Database.Stateful{
     global Integer recordsProcessed = 0;
     global String body = '';
+    global Integer emailLimit = 0;
     global Database.QueryLocator start(Database.BatchableContext bc){
         return Database.getQueryLocator(
             'SELECT Name FROM Work_Item__c WHERE Estimated_End_Date__c <= TODAY AND Status__c <> \'Done\''
@@ -15,5 +16,7 @@ global class emailBatch implements Database.Batchable<sObject>, Database.Statefu
     global void finish(Database.BatchableContext bc){
         System.debug(recordsProcessed + ' records processed.');
         EmailManager.sendMail('rgallinares@altimetrik.com','Work Items Overdue','Amount of Work Items Overdue: '+recordsProcessed+body);
+        emailLimit = Limits.getEmailInvocations();
+        System.debug('Email Invocations Batch:' +emailLimit);
     }
 }
