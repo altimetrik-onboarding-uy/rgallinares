@@ -11,9 +11,9 @@ trigger workNotification on Work_Item__c (after insert) {
         
         String workItemURL = URL.getSalesforceBaseUrl().toExternalForm() +'/'+ w.id;
         
-        if(c.Email != null)
-        	EmailManager.sendMail(c.Email,'Work Item','Name: ' +w.Name+'\nTitle: ' +w.Title__c+
-                              	'\nDescription: '+w.Description__c+'\nWork Item Record: ' + workItemURL);
+        if(c != null && c.Email != null)
+            EmailManager.sendMail(c.Email,'Work Item','Name: ' +w.Name+'\nTitle: ' +w.Title__c+
+                                '\nDescription: '+w.Description__c+'\nWork Item Record: ' + workItemURL);
     }
 
     
